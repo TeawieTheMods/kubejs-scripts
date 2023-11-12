@@ -1,9 +1,10 @@
 {
   "private": true,
   "scripts": {
-    "build": "tsc"
+    "build": "node build.mjs"
   },
-  "dependencies": {
-    "typescript": "^5.2.2"
+  "devDependencies": {
+    "@types/node": "^20.9.0",
+    "esbuild": "^0.19.5"
   }
 }
