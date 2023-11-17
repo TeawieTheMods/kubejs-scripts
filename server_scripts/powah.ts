@@ -1,22 +1,37 @@
 ServerEvents.recipes(event => {
 	// Functions
-	function averageRecipe(type, tier, capacitor, top, bottom) { // Solar Panel, Furnator, Magmator
+	function topRecipe(type, tier, capacitor, prevTier, primaryMat, secondaryMat) { // Solar Panel, Furnator, Magmator
 		event.remove({output: `powah:${type}_${tier}`} as any);
 
 		(event.shaped as any)(`1x powah:${type}_${tier}`, [
-			"AAA", "BCB", "DDD"
+			"AEA", "BCB", "DDD"
 		], {
-			A: top,
+			A: prevTier,
 			B: `powah:capacitor_${capacitor}`,
 			C: `powah:dielectric_casing`,
-			D: bottom
+			D: primaryMat,
+			E: secondaryMat
+		})
+	};
+
+	function bottomRecipe(type, tier, capacitor, prevTier, primaryMat, secondaryMat) { // Solar Panel, Furnator, Magmator
+		event.remove({output: `powah:${type}_${tier}`} as any);
+
+		(event.shaped as any)(`1x powah:${type}_${tier}`, [
+			"AAA", "BCB", "DED"
+		], {
+			A: primaryMat,
+			B: `powah:capacitor_${capacitor}`,
+			C: `powah:dielectric_casing`,
+			D: prevTier,
+			E: secondaryMat
 		})
 	};
 
 	function reactorRecipe(tier, capacitor, corner, middle) { // Reactor
 		event.remove({output: `powah:reactor_${tier}`} as any);
 
-		(event.shaped as any)(`1x powah:reactor_${tier}`, [
+		(event.shaped as any)(`2x powah:reactor_${tier}`, [
 			"ABA", "BCB", "ABA"
 		], {
 			A: `powah:${corner}`,
@@ -56,9 +71,9 @@ ServerEvents.recipes(event => {
 
 	// Calling
 	for (let i in genTiers) {
-		averageRecipe("solar_panel", genTiers[i], capTiers[i], solTiers[i], matTiers[i]) // Solar Panels
-		averageRecipe("furnator", genTiers[i], capTiers[i], matTiers[i], furTiers[i]) // Furnators
-		averageRecipe("magmator", genTiers[i], capTiers[i], matTiers[i], magTiers[i]) // Magmator
+		topRecipe("solar_panel", genTiers[i], capTiers[i], solTiers[i], matTiers[i], "powah:photoelectric_pane") // Solar Panels
+		bottomRecipe("furnator", genTiers[i], capTiers[i], furTiers[i], matTiers[i], "minecraft:furnace") // Furnators
+		bottomRecipe("magmator", genTiers[i], capTiers[i], magTiers[i], matTiers[i], "minecraft:bucket") // Magmator
 
 		reactorRecipe(genTiers[i], capTiers[i], reaCorner[i], reaMiddle[i]);
 		thermoRecipe(genTiers[i], matTiers[i], capTiers[i], theTiers[i]);
