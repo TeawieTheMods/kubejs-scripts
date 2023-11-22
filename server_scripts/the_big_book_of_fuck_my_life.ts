@@ -8,6 +8,7 @@ LootJS.modifiers((event) => {
 				Name: JSON.stringify({
 					text: "The Big Book of Fuck My Life",
 					color: "light_purple",
+					italic: false,
 				}),
 				Lore: [
 					JSON.stringify({
