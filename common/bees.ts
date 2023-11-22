@@ -21,31 +21,24 @@ interface BeeCombOutputDefinition {
 }
 
 export const bees: Record<string, BeeDefinition> = {
-	bacon: {
-		name: "Bacon Bee",
+	quenched_allay: {
+		name: "Quenched Allay Bee",
 		bee: {
-			primaryColor: "#bddada",
-			secondaryColor: "#d0581f",
-			flowerTag: "minecraft:flowers",
-			conditions: [
-				{
-					type: "forge:mod_loaded",
-					modid: "productivebees",
-				},
-			],
+			primaryColor: "#7217c4",
+			secondaryColor: "#2b9dad",
+			tertiaryColor: "#2b9dad",
+			particleColor: "#2b9dad",
+			renderer: "default_crystal",
+			flowerBlock: "hexcasting:quenched_allay",
+			size: 0.6,
 		},
-		breeding_recipe: ["productivebees:zombie", "productivebees:farmer_bee"],
 		conversion_recipe: {
-			from: "productivebees:zombie",
-			with: "minecraft:porkchop",
+			from: "productivebees:amethyst",
+			with: "hexcasting:quenched_allay",
 		},
 		comb_output: {
-			item: "minecraft:porkchop",
-			range: {
-				min: 1,
-				max: 4,
-			},
-			chance: 90,
+			item: "hexcasting:quenched_allay_shard",
+			chance: 25,
 			do_blocks: true,
 		},
 	},

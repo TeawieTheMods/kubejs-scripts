@@ -1,7 +1,7 @@
-let outputRemove2 = ["botania:mana_fluxfield", "bhc:blade_of_vitality"];
+import outputRemove from "../common/disabled_items";
 
 ItemEvents.tooltip((event) => {
-	for (let i in outputRemove2) {
-		event.add(outputRemove2[i] as any, "§4This item has been disabled.");
+	for (let i in outputRemove) {
+		event.add(outputRemove[i] as any, "§4This item has been disabled.");
 	}
 });

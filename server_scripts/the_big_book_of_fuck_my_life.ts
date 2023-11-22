@@ -4,6 +4,18 @@ LootJS.modifiers((event) => {
 		.removeLoot("patchouli:guide_book" as any)
 		.addLoot("eccentrictome:tome" as any)
 		.addNBT({
+			display: {
+				Name: JSON.stringify({
+					text: "The Big Book of Fuck My Life",
+					color: "light_purple",
+				}),
+				Lore: [
+					JSON.stringify({
+						text: "Legends say that a certain individual spent hours making this book",
+						color: "gray",
+					}),
+				],
+			},
 			"eccentrictome:mods": {
 				ae2: { 0: { Count: 1, id: "ae2:guide" } },
 				alchemistry: {

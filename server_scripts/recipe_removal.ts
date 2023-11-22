@@ -1,4 +1,4 @@
-let outputRemove = ["botania:mana_fluxfield", "bhc:blade_of_vitality"];
+import outputRemove from "../common/disabled_items";
 
 ServerEvents.recipes((event) => {
 	for (let i in outputRemove) {
