@@ -18,6 +18,14 @@ LootJS.modifiers((event) => {
 				],
 			},
 			"eccentrictome:mods": {
+				ad_astra: { 0: { Count: 1, id: "ad_astra:astrodux" } },
+				advancedperipherals: {
+					0: {
+						Count: 1,
+						id: "patchouli:guide_book",
+						tag: { "patchouli:book": "advancedperipherals:manual" },
+					},
+				},
 				ae2: { 0: { Count: 1, id: "ae2:guide" } },
 				alchemistry: {
 					0: {
@@ -42,6 +50,10 @@ LootJS.modifiers((event) => {
 					},
 				},
 				citadel: { 0: { Count: 1, id: "citadel:citadel_book" } },
+				cookingforblockheads: {
+					0: { Count: 1, id: "cookingforblockheads:recipe_book" },
+				},
+				croptopia: { 0: { Count: 1, id: "croptopia:guide" } },
 				hexcasting: {
 					0: {
 						Count: 1,
@@ -58,11 +70,24 @@ LootJS.modifiers((event) => {
 						},
 					},
 				},
+				integrateddynamics: {
+					0: {
+						Count: 1,
+						id: "integrateddynamics:on_the_dynamics_of_integration",
+					},
+				},
 				laserio: {
 					0: {
 						Count: 1,
 						id: "patchouli:guide_book",
 						tag: { "patchouli:book": "laserio:laseriobook" },
+					},
+				},
+				littlelogistics: {
+					0: {
+						Count: 1,
+						id: "patchouli:guide_book",
+						tag: { "patchouli:book": "littlelogistics:guide" },
 					},
 				},
 				modonomicon: {
