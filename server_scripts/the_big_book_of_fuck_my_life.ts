@@ -15,7 +15,7 @@ LootJS.modifiers((event) => {
 						text: "Legends say that a certain individual spent hours making this book",
 						color: "gray",
 					}),
-				],
+				] as any,
 			},
 			"eccentrictome:mods": {
 				ad_astra: { 0: { Count: 1, id: "ad_astra:astrodux" } },
