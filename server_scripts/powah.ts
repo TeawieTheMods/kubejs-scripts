@@ -1,3 +1,4 @@
+// Generator recipe rebalancing
 ServerEvents.recipes((event) => {
 	// Functions
 	function topRecipe(
@@ -185,3 +186,55 @@ ServerEvents.recipes((event) => {
 		thermoRecipe(genTiers[i], matTiers[i], capTiers[i], theTiers[i]);
 	}
 });
+
+// Block energising
+ServerEvents.recipes(event => {
+	// Energised Steel Block
+	event.custom({
+		"type": "powah:energizing",
+		"ingredients": [
+			{"item": "minecraft:iron_block"},
+			{"item": "minecraft:gold_block"}
+		],
+		"energy": 10_000 * 9,
+		"result": {
+			"item": "powah:energized_steel_block",
+			"count": 2
+		}
+	} as any)
+	// Blazing Crystal Block
+	event.custom({
+		"type": "powah:energizing",
+		"ingredients": [
+			{"item": "botania:blaze_block"}
+		],
+		"energy": 90_000 * 9,
+		"result": {
+			"item": "powah:blazing_crystal_block"
+		}
+	} as any)
+	// Niotic Crystal Block
+	event.custom({
+		"type": "powah:energizing",
+		"ingredients": [
+			{"item": "minecraft:diamond_block"}
+		],
+		"energy": 300_000 * 9,
+		"result": {
+			"item": "powah:niotic_crystal_block"
+		}
+	} as any)
+	// Niotic Crystal Block
+	event.custom({
+		"type": "powah:energizing",
+		"ingredients": [
+			{"item": "minecraft:emerald_block"}
+		],
+		"energy": 1_000_000 * 9,
+		"result": {
+			"item": "powah:spirited_crystal_block"
+		}
+	} as any)
+	// Nitro Crystal not done due to there being no 9x redstone block option 
+	// Will add if a compression mod is ever added
+})

@@ -1,1 +1,1 @@
-export default ["botania:mana_fluxfield", "bhc:blade_of_vitality"];
+export default ["botania:mana_fluxfield", "bhc:blade_of_vitality", "beachparty:radio"];
